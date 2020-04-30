@@ -57,7 +57,7 @@ resource "kubernetes_pod" "deploy_app" {
           read_only = lookup(volume_mount.value, "read_only", false)
         }
       }
-      tty = "true"
+      tty = var.tty
     }
     dynamic "host_aliases" {
       iterator = hosts
